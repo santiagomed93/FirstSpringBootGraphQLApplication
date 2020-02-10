@@ -1,0 +1,17 @@
+type Bike {
+    id: ID!
+    name: String!
+    owner: String!
+    description: String!
+}
+
+type Query {
+    findAllBikes: [Bike]!
+    countBikes: Long!
+}
+
+type Mutation {
+    newBike(name: String!, owner: String!, description: String!) : Bike!
+    deleteBike(id:ID!) : Boolean
+    updateBikeOwner(newOwner: String!, id: ID!) : Bike!
+}
